@@ -7,7 +7,7 @@ function _drawTodos() {
 	let template = ''
 	_todos.forEach(todo => {
 		if (todo.completed == true) {
-			template += `<s>${todo.getTemplate()}</s>`
+			template += `<strike>${todo.getTemplate()}</strike>`
 		} else {
 			template += todo.getTemplate()
 		}

@@ -11,7 +11,7 @@ export default class Todo {
 
   getTemplate() {
     return `
-      <li onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')>  <span id="${this._id}">${this.description}</span>  <span onclick="app.controllers.todoController.removeTodo('${this._id}')">  <i class="fas fa-trash-alt"></i>  </span>  </li>
+      <li onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">  <span id="${this._id}"> ${this.description}</span>  <span onclick="app.controllers.todoController.removeTodo('${this._id}')">  <i class="fas fa-trash-alt"></i>  </span>  </li>
     `
   }
 }

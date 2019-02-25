@@ -60,6 +60,7 @@ export default class TodoService {
 
 		todoApi.put(todoId, todo)
 			.then(res => {
+				this.getTodos()
 			})
 			.catch(err => _setState('error', err.response.data))
 	}

@@ -12,14 +12,17 @@ export default class Weather {
     this.celcius = (this.kelvin) - 273
     this.fahrenheit = (this.celcius) * 1.8 + 32
     this.main = data.main
+    this.icon = data.weather[0].icon
+    this.img = "http://openweathermap.org/img/w/" + this.icon + ".png"
   }
 
   getTemplate() {
     return `
-    <h4> Today's Weather Report </h4>
+    <h4> Today's Forecast </h4>
     <br>
-      <p> ${Math.floor(this.fahrenheit)} Fahrenheit <br>
-      ${this.city} </p>
+      <p> ${this.city} <br> ${Math.floor(this.fahrenheit)}° <img src="${this.img}">
+      </p>
+      
     `
   }
 }

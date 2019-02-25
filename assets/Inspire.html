@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:8080/?description=coool -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Inspire</title>
+	<link rel="stylesheet" href="./Inspire_files/style.css">
+</head>
+
+<body id="bg-image" style="">
+	<div id="weather">
+      <p> 274 Kelvin</p>
+      <p> 1 Celcius</p>
+      <p> 33 Fahrenheit</p>
+    </div>
+
+	<div id="quote">
+		The Quote
+	</div>
+
+	<div>
+		A Todo List
+		<div id="todo-error"></div>
+		<div class="form-entry">
+			<form onsubmit="app.controllers.todoController.addTodo(event)" class="p-3">
+				<div class="form-group">
+					<button type="submit">Add</button>
+					<input required="" type="text" name="description">
+				</div>
+			</form>
+		</div>
+		<div id="todos">
+    <div>
+    <button onclick="app.controllers.todoController.removeTodo()">Done</button>
+    coool 
+    
+    </div>
+    
+    <div>
+    <button onclick="app.controllers.todoController.removeTodo()">Done</button>
+    coool 
+    
+    </div>
+    </div>
+	</div>
+
+
+
+
+	<script src="./Inspire_files/axios.js"></script>
+	<script type="module" src="./Inspire_files/main.js"></script>
+
+
+
+</body></html>

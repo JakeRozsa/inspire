@@ -1,6 +1,9 @@
+import Todo from "../../models/todo.js";
+
+
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jakeR/todos/',
 	timeout: 3000
 });
 
@@ -19,6 +22,10 @@ function _setState(prop, data) {
 }
 
 export default class TodoService {
+	get Todos() {
+		return _state.todos.map(t => new Todo(t))
+	}
+
 	get TodoError() {
 		return _state.error
 	}
@@ -31,34 +38,43 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				// WHAT DO YOU DO WITH THE RESPONSE?
+				let data = res.data.data.map(d => new Todo(d))
+				_setState('todos', data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
 
-	addTodo(todo) {
-		todoApi.post('', todo)
+	addTodo(rawTodo) {
+		todoApi.post('', rawTodo)
 			.then(res => {
-				// WHAT DO YOU DO AFTER CREATING A NEW TODO?
+				this.getTodos()
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
 
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
+		todo.completed = !todo.completed
 		// Be sure to change the completed property to its opposite
 		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
 
 		todoApi.put(todoId, todo)
 			.then(res => {
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
 
 	removeTodo(todoId) {
-		// This one is on you to write.... 
+		todoApi.delete(todoId)
+			.then(res => {
+				console.log(res.data)
+				this.getTodos()
+			})
+			.catch(err => _setState('error', err.response.data))
+		// This one is on you to write....
 		// The http method is delete at the todoId
 	}
-
+	strikethrough(todoId) {
+		todoApi.put(todoId)
+	}
 }

@@ -18,6 +18,7 @@ function _setState(prop, data) {
 	_state[prop] = data
 	_subscribers[prop].forEach(fn => fn());
 }
+// ^^^ DONE
 
 
 export default class WeatherService {

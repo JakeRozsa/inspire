@@ -5,25 +5,48 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Inspire</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<title>Inspire</title>
 </head>
 
-<body id="bg-image">
-	<div id="weather">
-		Your Weather Template
+<body class="container-fluid" id="bg-image" background="url">
+
+	<div class="row mt-3">
+		<div class="col-4 ml-3" id="weather">
+			Your Weather Template
+		</div>
+
+		<div class="col-3"">
+			 
+		</div>
+
+		<div class=" col-4 todo-box">
+			<div id="todo-error"></div>
+			<div class="form-entry">
+				<form onsubmit="app.controllers.todoController.addTodo(event)" class="p-3">
+					<div class="form-group">
+						<button type="submit">add</button>
+						<input required type="text" name="description">
+						<div class="text-center" id="count"></div>
+					</div>
+				</form>
+				<ul id="todos">
+				</ul>
+			</div>
+		</div>
 	</div>
 
-	<div id="quote">
-		The Quote
-	</div>
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
-	</div>
+
+	<footer class="row">
+		<div class="col-10 offset-1" id="quote">
+			The Quote
+		</div>
+	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>

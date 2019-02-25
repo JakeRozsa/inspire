@@ -1,4 +1,49 @@
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.todo-box {
+position: fixed;
+top: 25px;
+right: 25px;
+margin-left: 25px;
+background-color: rgba(233, 179, 0, 0.578);
+border-radius: 10px;
+color: black;
+}
+
 #todo-error{
   color: red;
   font-size: 2em;
+}
+.trash {
+  max-width: 15px;
+  max-height: 15px;
+}
+
+#weather {
+  color: skyblue;
+  text-shadow: 1px 1px black;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+}
+
+h4 {
+  margin-bottom: -18px;
+}
+
+footer {
+   position: fixed;
+   bottom: 0px;
+   left: 50px;
+   right: 50px;
+   background: rgba(233, 179, 0, 0.578);
+   border-radius: 10px;
+   margin: 15px 0px;
+   align-content: center;
 }

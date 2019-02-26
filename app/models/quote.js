@@ -7,7 +7,8 @@ export default class Quote {
 
   getTemplate() {
     return `
-    <h2 class="quote" onhover="app.controllers.quoteController.hover(${this.author})">"${this.quote}"</h2>
+    <h2 id="quote-body">"${this.quote}"</h2>
+    <h2 id="author">"${this.author}"</h2>
     `
   }
 }

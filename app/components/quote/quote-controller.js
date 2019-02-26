@@ -6,7 +6,16 @@ function drawQuote() {
   let quote = _qs.quotes
   // @ts-ignore
   document.getElementById('quote').innerHTML = quote.getTemplate()
+  $('#author').hide();
+  $("#quote").hover(function () {
+    $('#author').show();
+  })
+  $("#quote").mouseleave(function () {
+    $('#author').hide();
+  })
+
 }
+
 
 export default class QuoteController {
   constructor() {
